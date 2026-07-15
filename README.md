@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/flowers.gif" width="220">
+  <img src="assets/gifs/tulips.gif" width="170">
 </p>
 
 <h1 align="center">🌸 SecureUSB Access Control 🌸</h1>
