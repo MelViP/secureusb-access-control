@@ -8,9 +8,6 @@
 Certificate-Based USB Protection using Python, Ubuntu, OpenSSL & Windows WMI
 </p>
 
-<p align="center">
-<i>"Security is strongest when it quietly protects what matters most."</i>
-</p>
 
 ## ✨ Why I Built This
 
@@ -38,10 +35,10 @@ This project implements certificate-based authorization using an internal Certif
 
 When a USB device is connected:
 
-- ✔ Verify the client certificate.
-- ✔ Allow **Read/Write** access for trusted computers.
-- ✔ Automatically switch to **Read-Only** mode on unauthorized devices.
-- ✔ Preserve the integrity of sensitive files.
+-  Verify the client certificate.
+-  Allow **Read/Write** access for trusted computers.
+-  Automatically switch to **Read-Only** mode on unauthorized devices.
+-  Preserve the integrity of sensitive files.
 
 ---
 
@@ -63,21 +60,39 @@ When a USB device is connected:
 - Python
 - Ubuntu Server
 - OpenSSL
-- Windows WMI
+- SFTP
+- Microsoft Intune
+- Windows Certificate Store
+- Windows Management Instrumentation (WMI)
 - X.509 Certificates
 - NTFS Permissions
 - Git
 
 ---
 
-## 🌱 Future Improvements
-
-- Certificate Revocation (CRL)
-- Logging & Auditing
-- GUI Application
-- Docker Deployment
-- Active Directory Integration
-- Automatic Certificate Renewal
+                     Ubuntu Server
+                  (OpenSSL Root CA)
+                          │
+            Generate & Sign Certificates
+                          │
+                          ▼
+                 Secure Transfer (SFTP)
+                          │
+                          ▼
+              Windows Test Workstation
+                          │
+              Deploy via Microsoft Intune
+                          │
+                          ▼
+          Windows Certificate Store (Trusted)
+                          │
+                          ▼
+         Python + WMI Certificate Validation
+                          │
+              ┌───────────┴───────────┐
+              │                       │
+         Trusted Device         Untrusted Device
+         Read / Write             Read Only
 
 ---
 
